@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/*import fonts from font.google.com(select font--embed code--copy link--copy fontfamily too)*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+font-family: "DM Serif Display", serif;
+ height: 100vh;
+}
+
+.slider
+{
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.left
+{
+    height: 100%;
+    width: 35%;  /*upto 35% left slide will present*/
+    position: absolute; /*calculate from starting*/
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease-in-out; /*for smooth transition*/
+}
+
+.left > div
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.left h1
+{
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: -30px;
+}
+
+.right
+{
+    height: 100%;
+    position: absolute; /*calculate from starting*/
+    top: 0;
+    left: 35%;  /*from 35% right slide will start*/
+    width: 65%; /*upto 65% right slide will present*/
+    transition: transform 0.5s ease-in-out; /*for smooth transition*/
+}
+
+.right > div
+{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+}
+
+
+button
+{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px;
+}
+
+button:hover
+{
+    color: rgb(173, 135, 223);
+}
+
+button:focus
+{
+    outline: none;
+}
+
+.slider .buttons button
+{
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    z-index: 100;
+}
+
+.slider .buttons .down-button
+{
+    transform: translateX(-100%);
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.slider .buttons .up-button
+{
+    transform: translateY(-100%);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
